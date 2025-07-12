@@ -1,19 +1,43 @@
-function calculateBMI() {
-  const weight = parseFloat(document.getElementById("weight").value);
-  const height = parseFloat(document.getElementById("height").value) / 100;
+// Wait for the DOM to be ready
+document.addEventListener("DOMContentLoaded", () => {
+  // Load shared navbar into every page
+  fetch("https://hangga-hub.github.io/components/navbar.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("navbar").innerHTML = html;
 
-  if (!weight || !height) {
-    document.getElementById("result").innerText = "Please enter valid numbers!";
-    return;
+      // After navbar loads, bind menu toggle
+      const toggle = document.getElementById("menuToggle");
+      const navLinks = document.querySelector(".nav-links");
+
+      if (toggle && navLinks) {
+        toggle.addEventListener("click", () => {
+          navLinks.classList.toggle("show");
+        });
+      }
+
+      // Highlight active menu item
+      document.querySelectorAll(".nav-links a").forEach(link => {
+        if (window.location.href.includes(link.href)) {
+          link.classList.add("active");
+        }
+      });
+    });
+});
+
+// 🔧 Add custom tool logic below — e.g., JSON Validator
+function validateJSON() {
+  const input = document.getElementById("jsonInput").value;
+  const resultBox = document.getElementById("result");
+
+  try {
+    JSON.parse(input);
+    resultBox.textContent = "✅ Valid JSON!";
+    resultBox.style.color = "#66bb6a";
+  } catch (err) {
+    resultBox.textContent = `❌ Invalid JSON: ${err.message}`;
+    resultBox.style.color = "#ff6b6b";
   }
-
-  const bmi = (weight / (height * height)).toFixed(2);
-  let category = "";
-
-  if (bmi < 18.5) category = "Underweight";
-  else if (bmi < 24.9) category = "Normal weight";
-  else if (bmi < 29.9) category = "Overweight";
-  else category = "Obese";
-
-  document.getElementById("result").innerText = `Your BMI is ${bmi} (${category})`;
 }
+
+// You can copy/paste other tool logic here, like calculateBMI()

@@ -4,42 +4,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JSON Validator – Hangga Tools</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://hangga-hub.github.io/style.css" />
   <link rel="icon" href="https://hangga-hub.github.io/favicon.ico" type="image/x-icon" />
-
-  <meta name="description" content="Fast and accurate JSON validation by Hangga. Paste your JSON and check instantly.">
-  <meta name="keywords" content="JSON validator, JSON checker, code tools, Hangga utilities">
-  <meta name="author" content="Hangga" />
+  <meta name="description" content="Validate and format JSON with Hangga's fast, dark-themed JSON tool.">
 </head>
 <body>
-  <nav>
-    <h1><a href="https://hangga-hub.github.io/">🔧 Hangga Tools</a></h1>
-    <span>JSON Validator</span>
-  </nav>
+  <div id="navbar"></div>
+
 
   <section id="ad-space">
-    <p>[Ad Spot – Useful for code editor tools or productivity affiliate links]</p>
+    <p>[Ad – Dev tools, browser extensions, productivity software]</p>
   </section>
 
-  <main class="container">
+  <main class="container tool-json">
     <h2>🧠 Validate Your JSON</h2>
     <textarea id="jsonInput" placeholder='Paste your JSON here'></textarea>
     <button onclick="validateJSON()">Validate</button>
     <div id="result"></div>
+
+    <div class="share-buttons">
+      <a href="https://x.com/intent/tweet?url=https://hangga-hub.github.io/json-validator" target="_blank">
+        <img src="https://cdn.simpleicons.org/x/white" alt="Share on X" />
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://hangga-hub.github.io/json-validator" target="_blank">
+        <img src="https://cdn.simpleicons.org/facebook/white" alt="Share on Facebook" />
+      </a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://hangga-hub.github.io/json-validator" target="_blank">
+        <img src="https://cdn.simpleicons.org/linkedin/white" alt="Share on LinkedIn" />
+      </a>
+    </div>
   </main>
-  <div class="share-buttons">
-          <a href="https://x.com/intent/tweet?url=https://hangga-hub.github.io/json-validator&text=Handy%20JSON%20Validator%20by%20Hangga!" target="_blank">
-            <img src="https://cdn.simpleicons.org/x/white" alt="Share on X" />
-          </a>
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https://hangga-hub.github.io/json-validator" target="_blank">
-            <img src="https://cdn.simpleicons.org/facebook/white" alt="Share on Facebook" />
-          </a>
-          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://hangga-hub.github.io/json-validator" target="_blank">
-            <img src="https://img.icons8.com/?size=50&id=8808&format=png" alt="Share on LinkedIn" />
-          </a>
-        </div>
+
   <footer>
-    <p>Made with ❤️ by Hangga | <a href="https://github.com/hangga-hub/json-validator">View on GitHub</a></p>
+    <p>Made with ❤️ by Hangga | <a href="https://github.com/hangga-hub/json-validator">GitHub</a></p>
   </footer>
 
   <script src="script.js"></script>
